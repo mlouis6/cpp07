@@ -13,12 +13,14 @@
 #ifndef ITER_HPP
 # define ITER_HPP
 
-# include <stdint.h>
-
 template<typename T>
-void	iter(const uintptr_t at, const int len, T& func())
+void	iter(T* arr, const std::size_t len, void (*func)(const T&))
 {
-
+	if (!arr || !func)
+		return ;
+	
+	for (std::size_t i ; i < len ; ++i)
+		func(arr[i]);
 }
 
 #endif
