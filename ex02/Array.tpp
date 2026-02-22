@@ -6,7 +6,7 @@
 /*   By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:59:12 by mlouis            #+#    #+#             */
-/*   Updated: 2026/02/22 10:52:09 by mlouis           ###   ########.fr       */
+/*   Updated: 2026/02/22 11:36:17 by mlouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Array<T>::Array(const Array& other)
 }
 
 template <typename T>
-Array<T>&	Array<T>::operator=(const Array<T>& other)
+Array<T>&	Array<T>::operator=(const Array& other)
 {
 	if (this != &other)
 	{
