@@ -6,7 +6,7 @@
 #    By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 10:38:39 by mlouis            #+#    #+#              #
-#    Updated: 2026/02/18 11:32:55 by mlouis           ###   ########.fr        #
+#    Updated: 2026/02/22 10:42:18 by mlouis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,8 @@ NAME := template.out
 OBJS_DIR := .build/
 
 SRCS := main.cpp
-TEMS := Array.tpp
 INCS := .
-OBJS := $(addprefix $(OBJS_DIR), $(SRCS:%.cpp=%.o) $(TEMS:%.tpp=%.o))
+OBJS := $(addprefix $(OBJS_DIR), $(SRCS:%.cpp=%.o))
 DEPS := $(OBJS:.o=.d)
 
 CXX := c++

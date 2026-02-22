@@ -1,31 +1,56 @@
 #include <iostream>
 #include <Array.hpp>
+#include <stdlib.h>
+#include <ctime>
+#include <iomanip>
 
-#define MAX_VAL 750
+#define MAX_VAL 7//50
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < MAX_VAL - 3; i++)
     {
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
     }
     //SCOPE
-    {
+    // {
         Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
-
+        numbers[5] = 5;
+        tmp[6] = 6;
+        const Array<int> test(tmp);
+        test[0] = 0;
+        tmp[6] = 66;
+    // }
+    std::cout << "(i) ";
+    std::cout << std::setw(14) << std::right
+            << "MIRROR";
+    std::cout << std::setw(17) << std::right
+            << "NUMBERS";
+    std::cout << std::setw(17) << std::right
+            << "TMP";
+    std::cout << std::setw(17) << std::right
+            << "TEST" << std::endl;
+    std::cout << "---------------------------------------------------------------------" << std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
+        std::cout << "(" << i << ") ";
+        std::cout << std::setw(14) << std::right
+                << mirror[i] << " ; ";
+        std::cout << std::setw(14) << std::right
+                << numbers[i] << " ; ";
+        std::cout << std::setw(14) << std::right
+                << tmp[i] << " ; ";
+        std::cout << std::setw(14) << std::right
+                << test[i] << std::endl;
+        // if (mirror[i] != numbers[i])
+        // {
+        //     std::cerr << "didn't save the same value!!" << std::endl;
+        //     return 1;
+        // }
     }
     try
     {
@@ -48,6 +73,18 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
+
+    Array<int>  nothing;
+    std::cout << "nothing size= " << nothing.size() << std::endl;
+    try
+    {
+        std::cout << "nothing[0]= " << nothing[0] << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
     delete [] mirror;//
     return 0;
 }

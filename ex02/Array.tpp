@@ -6,11 +6,9 @@
 /*   By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:59:12 by mlouis            #+#    #+#             */
-/*   Updated: 2026/02/18 13:57:31 by mlouis           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:52:09 by mlouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Array.hpp"
 
 template <typename T>
 Array<T>::Array() : _size(0), _data(new T[0])
@@ -51,4 +49,18 @@ template <typename T>
 Array<T>::~Array()
 {
 	delete[] _data;
+}
+
+template <typename T>
+T&	Array<T>::operator[](unsigned int idx) const
+{
+	if (idx >= _size)
+		throw std::out_of_range("Index out of range");
+	return (_data[idx]);
+}
+
+template <typename T>
+unsigned int	Array<T>::size() const
+{
+	return (_size);
 }

@@ -6,7 +6,7 @@
 /*   By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:39:27 by mlouis            #+#    #+#             */
-/*   Updated: 2026/02/18 13:54:53 by mlouis           ###   ########.fr       */
+/*   Updated: 2026/02/22 10:51:21 by mlouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@ class Array
 		Array(unsigned int n);
 		Array(const Array& cpy);
 		Array&	operator=(const Array& cpy);
-		Array&	operator[](const int size);
+		T&		operator[](unsigned int idx) const;
 		~Array();
+
+		unsigned int	size() const;
 	private:
-		T*				_data;
 		unsigned int	_size;
+		T*				_data;
 	
 };
+
+#include "Array.tpp"
 
 #endif
