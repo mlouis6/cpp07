@@ -21,8 +21,11 @@ class Array
 		Array(unsigned int n);
 		Array(const Array& cpy);
 		Array&	operator=(const Array& cpy);
+		Array&	operator[](const int size);
 		~Array();
 	private:
+		T*				_data;
+		unsigned int	_size;
 	
 };
 
