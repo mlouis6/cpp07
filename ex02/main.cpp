@@ -8,9 +8,11 @@
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
+    std::cout << "numbers size= " << numbers.size() << std::endl;
+    std::cout << std::endl;
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
-    for (int i = 0; i < MAX_VAL - 3; i++)
+    for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
         numbers[i] = value;
@@ -52,6 +54,8 @@ int main(int, char**)
         //     return 1;
         // }
     }
+
+    std::cout << std::endl;
     try
     {
         numbers[-2] = 0;
@@ -74,6 +78,7 @@ int main(int, char**)
         numbers[i] = rand();
     }
 
+    std::cout << std::endl;
     Array<int>  nothing;
     std::cout << "nothing size= " << nothing.size() << std::endl;
     try

@@ -6,7 +6,7 @@
 /*   By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:39:27 by mlouis            #+#    #+#             */
-/*   Updated: 2026/02/22 10:51:21 by mlouis           ###   ########.fr       */
+/*   Updated: 2026/02/22 11:23:55 by mlouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Array
 		~Array();
 
 		unsigned int	size() const;
+
 	private:
 		unsigned int	_size;
-		T*				_data;
-	
+		T*				_data;	
 };
 
 #include "Array.tpp"
