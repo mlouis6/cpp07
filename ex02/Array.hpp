@@ -6,7 +6,7 @@
 /*   By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:39:27 by mlouis            #+#    #+#             */
-/*   Updated: 2026/02/22 11:23:55 by mlouis           ###   ########.fr       */
+/*   Updated: 2026/02/23 12:31:11 by mlouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ class Array
 		Array();
 		Array(unsigned int n);
 		Array(const Array& cpy);
-		Array&	operator=(const Array& cpy);
-		T&		operator[](unsigned int idx) const;
+		Array&		operator=(const Array& cpy);
+		T&			operator[](unsigned int idx);
+		const T&	operator[](unsigned int idx) const;
 		~Array();
 
 		unsigned int	size() const;

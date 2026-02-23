@@ -6,12 +6,12 @@
 /*   By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:59:12 by mlouis            #+#    #+#             */
-/*   Updated: 2026/02/22 11:36:17 by mlouis           ###   ########.fr       */
+/*   Updated: 2026/02/23 12:30:49 by mlouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 template <typename T>
-Array<T>::Array() : _size(0), _data(new T[0])
+Array<T>::Array() : _size(0), _data(0)
 {
 
 }
@@ -52,7 +52,15 @@ Array<T>::~Array()
 }
 
 template <typename T>
-T&	Array<T>::operator[](unsigned int idx) const
+T&	Array<T>::operator[](unsigned int idx)
+{
+	if (idx >= _size)
+		throw std::out_of_range("Index out of range");
+	return (_data[idx]);
+}
+
+template <typename T>
+const T&	Array<T>::operator[](unsigned int idx) const
 {
 	if (idx >= _size)
 		throw std::out_of_range("Index out of range");
