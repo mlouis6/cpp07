@@ -6,7 +6,7 @@
 /*   By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 12:36:33 by mlouis            #+#    #+#             */
-/*   Updated: 2026/02/23 12:40:25 by mlouis           ###   ########.fr       */
+/*   Updated: 2026/02/23 18:41:17 by mlouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(int, char**)
 {
 	Array<int> numbers(MAX_VAL);
 	std::cout << "numbers size= " << numbers.size() << std::endl;
+	std::cout << numbers[0] << std::endl;
 	std::cout << std::endl;
 	int* mirror = new int[MAX_VAL];
 	srand(time(NULL));
@@ -85,8 +86,8 @@ int main(int, char**)
 	}
 
 	std::cout << std::endl;
-	const Array<int> cTest(test);
-	// cTest[0] = 0;
+	const Array<int> cTest(numbers);
+	cTest[0] = 4;
 	try
 	{
 		std::cout << "cTest[0]= " << cTest[0] << std::endl;

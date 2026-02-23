@@ -6,7 +6,7 @@
 #    By: mlouis <mlouis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 10:38:39 by mlouis            #+#    #+#              #
-#    Updated: 2026/02/22 10:42:18 by mlouis           ###   ########.fr        #
+#    Updated: 2026/02/23 18:33:59 by mlouis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJS := $(addprefix $(OBJS_DIR), $(SRCS:%.cpp=%.o))
 DEPS := $(OBJS:.o=.d)
 
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -g3
 CPPFLAGS := $(addprefix -I,$(INCS)) -MMD -MP
 MAKEFLAGS += --no-print-directory
 
